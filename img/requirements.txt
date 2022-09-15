@@ -1,0 +1,23 @@
+Django>=4.0, <5.0
+psycopg2-binary>=2.8
+Pillow>=8.3.1, <9.0
+django-cors-headers>=3.10.0, <4.0
+
+# tests
+pytest>=5.4.0, <5.5.0
+pytest-cov>=2.8.0, <2.9.0
+
+# linting
+mypy>=0.910
+flake8>=3.9
+flake8-import-order>=0.18.0, <0.19.0
+flake8-quotes>=3.0.0, <3.1.0
+flake8-print>=3.1.0, <3.2.0
+flake8-debugger>=3.2.0, <3.3.0
+flake8-class-attributes-order>=0.1.0, <0.2.0
+flake8-docstrings>=1.5.0, <1.6.0
+flake8-builtins>=1.5.0, <1.6.0
+flake8-type-annotations>=0.1.0, <0.2.0
+pep8-naming>=0.10.0, <0.11.0
+flake8-variables-names>=0.0.4
+flake8-annotations-coverage>=0.0.5

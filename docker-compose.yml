@@ -1,0 +1,38 @@
+version: "3.3"
+services:
+
+  web:
+    build: .
+    image: img_image
+    container_name: img-web
+    working_dir: /project/src
+    command: python manage.py runserver 0.0.0.0:8001
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./uploads:/project/uploads
+      - ./img:/project/src
+    environment:
+      - DEBUG=1
+      - PYTHONUNBUFFERED=1
+      - BASE_URL=http://img.local
+      - TZ=Europe/London
+      - POSTGRES_HOST=host.docker.internal
+      - POSTGRES_DB=img
+      - POSTGRES_USER=img
+      - POSTGRES_SSL_MODE=require
+      - PROJECT_VERSION=3.0.1
+    depends_on:
+      - db
+
+  db:
+    image: postgres:14
+    container_name: img-db
+    restart: always
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=img
+      - POSTGRES_USER=img
+    ports:
+      - "5432:5432"

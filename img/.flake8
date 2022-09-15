@@ -1,0 +1,25 @@
+[flake8]
+max-complexity = 10
+import-order-style = pycharm
+min-coverage-percents = 80
+max-line-length = 120
+application-import-names = app, images, tokens
+
+ignore =
+  D104, ; Missing docstring in public package
+  D100  ; Missing docstring in public module
+
+per-file-ignores =
+  ./manage.py: TAE001, Q000
+  */migrations/*.py: D101, E501, I100, I201
+
+class_attributes_order =
+  field,
+  meta_class,
+  nested_class,
+  magic_method,
+  property_method,
+  static_method,
+  class_method,
+  method,
+  private_method

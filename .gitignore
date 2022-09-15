@@ -1,0 +1,7 @@
+/uploads/
+/.idea/
+/db-data/
+/img/.mypy_cache/
+/img/.coverage
+/docker-compose.override.yml
+__pycache__/
